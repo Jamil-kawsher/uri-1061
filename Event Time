@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    int start_m,start_s,start_h,start_d,end_m,end_s,end_h,end_d;
+    int final_m,final_s,final_h,final_d;
+    scanf("%*s %d",&start_d);
+    scanf("%d %*s %d %*s %d",&start_h,&start_m,&start_s);
+    scanf("%*s %d",&end_d);
+    scanf("%d %*s %d %*s %d",&end_h,&end_m,&end_s);
+    final_s=(end_s-start_s);
+    final_m=(end_m-start_m);
+    final_h=(end_h-start_h);
+    final_d=(end_d-start_d);
+
+    if(final_s<0){
+        final_s=(60+final_s);
+        final_m--;
+    }
+    if(final_m<0){
+        final_m=(60+final_m);
+        final_h--;
+    }
+    if(final_h<0){
+        final_h=(24+final_h);
+        final_d--;
+    }
+    printf("%d dia(s)\n%d hora(s)\n%d minuto(s)\n%d segundo(s)\n",final_d,final_h,final_m,final_s);
+
+
+
+
+    return 0;
+}
